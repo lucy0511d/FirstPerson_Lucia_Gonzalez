@@ -9,6 +9,9 @@ public class FirstPerson : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // bloquea el raton y lo oculta
+        Cursor.lockState = CursorLockMode.Locked;
+
         controller = GetComponent<CharacterController>();
     }
 
@@ -23,6 +26,7 @@ public class FirstPerson : MonoBehaviour
         Vector2 input = new Vector2 (h, v).normalized;
         if (input.magnitude > 0)
         {
+            // se calcula el angulo al que tengo que rotarme en funcion de los inputs y orientacion de camara
             float anguloRotacion = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             transform.eulerAngles = new Vector3(0, anguloRotacion, 0);
 
