@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class FirstPerson : MonoBehaviour
 {
+    [Header("Detección del suelo")]
+    [SerializeField] private Transform pies;
+    [SerializeField] private float radioDeteccion;
+    [SerializeField] private float escalaGravedad;
+    [SerializeField] private LayerMask queEsSuelo;
+
     [SerializeField] private float velocidadMovimiento;
     CharacterController controller;
+    private Vector3 movimientoVertical;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +42,28 @@ public class FirstPerson : MonoBehaviour
 
             controller.Move(movimiento * velocidadMovimiento * Time.deltaTime);
         }
+        DeteccionSuelo();
+        AplicarGravedad();
         
         
 
+    }
+    private void AplicarGravedad()
+    {
+        movimientoVertical.y += escalaGravedad * Time.deltaTime;
+        controller.Move(movimientoVertical * Time.deltaTime);
+    }
+    private void DeteccionSuelo()
+    {
+        Collider[] collsDetectados = Physics.OverlapSphere(pies.position, radioDeteccion, queEsSuelo);
+        if (collsDetectados.Length > 0)
+        {
+            movimientoVertical.y = 0;
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(pies.position, radioDeteccion);
     }
 }
