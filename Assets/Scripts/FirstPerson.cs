@@ -11,6 +11,7 @@ public class FirstPerson : MonoBehaviour
     [SerializeField] private LayerMask queEsSuelo;
 
     [SerializeField] private float velocidadMovimiento;
+    [SerializeField] private float alturaSalto;
     CharacterController controller;
     private Vector3 movimientoVertical;
 
@@ -59,6 +60,14 @@ public class FirstPerson : MonoBehaviour
         if (collsDetectados.Length > 0)
         {
             movimientoVertical.y = 0;
+            Saltar();
+        }
+    }
+    private void Saltar()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            movimientoVertical.y = Mathf.Sqrt(-2 * escalaGravedad * alturaSalto);
         }
     }
     private void OnDrawGizmos()

@@ -1061,6 +1061,37 @@ Transform:
   - {fileID: 1553194484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1274542229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274542230}
+  m_Layer: 0
+  m_Name: Pies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1274542230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274542229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651898418320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553194482
 GameObject:
   m_ObjectHideFlags: 3
@@ -1151,7 +1182,7 @@ GameObject:
   - component: {fileID: 1829218500}
   - component: {fileID: 1829218499}
   - component: {fileID: 1829218498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,6 +1494,7 @@ Transform:
   - {fileID: 6792818992040688449}
   - {fileID: 1186050697486709887}
   - {fileID: 6729919620081430459}
+  - {fileID: 1274542230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &608321760974329095
@@ -1765,11 +1797,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132147643338282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d122098b354dce4429fd8d71ec993598, type: 3}
+  m_Script: {fileID: 11500000, guid: a7c1ca678ee12434aac07196f8dc1dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pies: {fileID: 0}
+  radioDeteccion: 0
+  escalaGravedad: 0
+  queEsSuelo:
+    serializedVersion: 2
+    m_Bits: 8
   velocidadMovimiento: 0
-  smoothing: 0
+  alturaSalto: 0
 --- !u!4 &1031632035659902669
 Transform:
   m_ObjectHideFlags: 0
