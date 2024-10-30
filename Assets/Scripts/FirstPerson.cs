@@ -49,6 +49,12 @@ public class FirstPerson : MonoBehaviour
         
 
     }
+    private void MoverYRotar()
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        Vector2 input = new Vector3 (0, Camera.main.transform.eulerAngles.y, 0);
+    }
     private void AplicarGravedad()
     {
         movimientoVertical.y += escalaGravedad * Time.deltaTime;
