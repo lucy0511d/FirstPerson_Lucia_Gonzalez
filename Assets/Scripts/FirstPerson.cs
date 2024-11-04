@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FirstPerson : MonoBehaviour
 {
+    [SerializeField] private float vidas;
     [Header("Detección del suelo")]
     [SerializeField] private Transform pies;
     [SerializeField] private float radioDeteccion;
@@ -46,7 +47,6 @@ public class FirstPerson : MonoBehaviour
         DeteccionSuelo();
         AplicarGravedad();
         
-        
 
     }
     private void MoverYRotar()
@@ -80,5 +80,13 @@ public class FirstPerson : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(pies.position, radioDeteccion);
+    }
+    public void RecibirDanho(float danhoRecibido)
+    {
+        vidas -= danhoRecibido;
+        if(vidas <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
