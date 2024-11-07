@@ -15,6 +15,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private LayerMask queEsDanhable;
     [SerializeField] private int radioAtaque;
     private bool danhoRealizado = false;
+    [SerializeField] private float vidas;
    
     void Start()
     {
@@ -73,5 +74,13 @@ public class Enemigo : MonoBehaviour
     private void CerrarVentanaAtaque()
     {
         ventanaAbierta = false;
+    }
+    public void RecibirDanho(float danhoRecibido)
+    {
+        vidas -= danhoRecibido;
+        if (vidas <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
