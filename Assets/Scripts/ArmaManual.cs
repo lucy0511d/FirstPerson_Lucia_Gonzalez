@@ -25,11 +25,15 @@ public class ArmaManual : MonoBehaviour
 
             //forward es z, right es  , up es 
            if( Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
-            {
-                hitInfo.transform.GetComponent<Enemigo>().RecibirDanho(misDatos.danhoAtaque);
+           {
+                if ( hitInfo.transform.CompareTag("ParteEnemigo"))
+                {
+                    hitInfo.transform.GetComponent<EnemyPart>().RecibirDanho(misDatos.danhoAtaque);
+                }
+                
                // Debug.Log(hitInfo.transform.name);
                 
-            }
+           }
         }
     }
 }

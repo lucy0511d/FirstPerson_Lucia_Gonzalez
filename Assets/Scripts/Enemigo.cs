@@ -16,12 +16,17 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private int radioAtaque;
     private bool danhoRealizado = false;
     [SerializeField] private float vidas;
-   
+    [SerializeField] Rigidbody[] huesos;
+
+    public float Vidas { get => vidas; set => vidas = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindObjectOfType<FirstPerson>();
+        huesos = GetComponentsInChildren<Rigidbody>();
+        CambiarEstadoHuesos(true);
     }
 
 
@@ -60,6 +65,20 @@ public class Enemigo : MonoBehaviour
             danhoRealizado = true;
         }
     }
+    public void Morir()
+    {
+        agent.enabled = false;
+        anim.enabled = false;
+        CambiarEstadoHuesos(false);
+    }
+    private void CambiarEstadoHuesos(bool estado)
+    {
+        for(int i = 0; i < huesos.Length; i++)
+        {
+            huesos[i].isKinematic = estado;
+        }
+    }
+
 
     private void FinAtaque()
     {
@@ -75,12 +94,5 @@ public class Enemigo : MonoBehaviour
     {
         ventanaAbierta = false;
     }
-    public void RecibirDanho(float danhoRecibido)
-    {
-        vidas -= danhoRecibido;
-        if (vidas <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    
 }
