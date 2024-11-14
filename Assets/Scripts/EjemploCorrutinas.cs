@@ -7,7 +7,13 @@ public class EjemploCorrutinas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SemaforoInfinito());
+        Coroutine llamada1 = StartCoroutine(SemaforoInfinito());
+        Coroutine llamada2 = StartCoroutine(SemaforoInfinito());
+        Coroutine llamada3 = StartCoroutine(SemaforoInfinito());
+        Coroutine llamada4 = StartCoroutine(SemaforoInfinito());
+        Coroutine llamada5 = StartCoroutine(SemaforoInfinito());
+        StopCoroutine(llamada1);
+        StopAllCoroutines();
     }
 
     // Update is called once per frame

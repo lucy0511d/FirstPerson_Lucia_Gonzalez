@@ -81,6 +81,15 @@ public class FirstPerson : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(pies.position, radioDeteccion);
     }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("ParteEnemigo"))
+        {
+            Vector3 direccionFuerza = hit.transform.position - transform.position; //transform.position es la posicion de este gameobject
+            Rigidbody rbEnemigo = hit.gameObject.GetComponent<Rigidbody>();
+            rbEnemigo.AddForce(direccionFuerza.normalized * 50, ForceMode.Impulse);
+        }
+    }
     public void RecibirDanho(float danhoRecibido)
     {
         vidas -= danhoRecibido;

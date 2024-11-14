@@ -9,12 +9,33 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Enemigo enemigoPrefab;
     void Start()
     {
-        Instantiate(enemigoPrefab, puntosSpawn[0].position, Quaternion.identity);
+        StartCoroutine(SpawnerEnemigos());
     }
 
-    //IEnumerable SpawnerEnemigos()
-    //{
-    //  
-    //}
+    private IEnumerator SpawnerEnemigos()
+    {
+        while (true)
+        {
+            Enemigo copia = Instantiate(enemigoPrefab, puntosSpawn[Random.Range(0, puntosSpawn.Length)].position, Quaternion.identity);
+            yield return new WaitForSeconds(2);
+        }
+       
+    }
+    void SpawnearObjeto() //Opcional
+    {
+        float rng = Random.Range(0f, 1f);
+        if(rng <= 0.2f) //20%
+        {
+
+        }
+        else if (rng <= 0.3f) //10%
+        {
+
+        }
+        else if (rng <= 0.45f) //15%
+        {
+
+        }
+    }
   
 }
