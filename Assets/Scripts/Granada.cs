@@ -35,7 +35,7 @@ public class Granada : MonoBehaviour
             {
                 coll.GetComponent<EnemyPart>().Explotar();
                 coll.GetComponent<Rigidbody>().isKinematic = false;
-                coll.GetComponent<Rigidbody>().AddExplosionForce(50, transform.position, radioExplosion, 3.5f);
+                coll.GetComponent<Rigidbody>().AddExplosionForce(80, transform.position, radioExplosion, 15.5f, ForceMode.Impulse);
 
             }
         }
