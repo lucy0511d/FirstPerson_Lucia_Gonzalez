@@ -7,7 +7,7 @@ public class Granada : MonoBehaviour
     // private Transform posicionGranada;
     [SerializeField] private float fuerzaImpulso;
     [SerializeField] private float tiempoVida;
-    [SerializeField] private int radioAtaque;
+    [SerializeField] private int radioExplosion;
     [SerializeField] private LayerMask queEsDanhable;
     [SerializeField] private GameObject explosionPrefab;
 
@@ -24,13 +24,20 @@ public class Granada : MonoBehaviour
     {
         
     }
+    
     private void OnDestroy()
     {  
         Instantiate(explosionPrefab, transform.position,Quaternion.identity);
-        Collider[] collsDetectados = Physics.OverlapSphere(transform.position, radioAtaque, queEsDanhable);
+        Collider[] collsDetectados = Physics.OverlapSphere(transform.position, radioExplosion, queEsDanhable);
         if (collsDetectados.Length > 0)
         {
-            Debug.Log("Hola");
+            foreach (Collider coll in collsDetectados)
+            {
+                coll.GetComponent<EnemyPart>().Explotar();
+                coll.GetComponent<Rigidbody>().isKinematic = false;
+                coll.GetComponent<Rigidbody>().AddExplosionForce(50, transform.position, radioExplosion, 3.5f);
+
+            }
         }
         Debug.Log("Me voy pa wiii");
 

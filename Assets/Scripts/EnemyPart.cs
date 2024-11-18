@@ -14,4 +14,10 @@ public class EnemyPart : MonoBehaviour
             mainScript.Morir();
          }
     }
+    public void Explotar()
+    {
+        mainScript.GetComponent<Animator>().enabled = false;
+        //mainScript.GetComponent<NavMeshAgent>().enabled = false;
+        mainScript.enabled = false;
+    }
 }
