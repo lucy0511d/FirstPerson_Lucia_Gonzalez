@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48af4489312346644a740126dbdbcd56, type: 3}
-  m_Name: Pistola
+  m_Name: M4
   m_EditorClassIdentifier: 
-  balasCargador: 7
-  balasBolsa: 40
+  balasCargador: 60
+  balasBolsa: 200
   distanciaAtaque: 500
-  danhoAtaque: 25
-  cadenciaAtaque: 1.5
+  danhoAtaque: 15
+  cadenciaAtaque: 0.08

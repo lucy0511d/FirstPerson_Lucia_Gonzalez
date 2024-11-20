@@ -50,7 +50,15 @@ public class Enemigo : MonoBehaviour
         {
             agent.isStopped = true;
             anim.SetBool("attacking", true);
+            EnfocarPlayer();
         }
+    }
+
+    private void EnfocarPlayer()
+    {
+        Vector3 direccionAPlayer = (player.transform.position - transform.position).normalized;
+        direccionAPlayer.y = 0;
+        transform.rotation = Quaternion.LookRotation(direccionAPlayer);
     }
 
     private void DetectarJugador()
