@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: 0
-  pies: {fileID: 0}
+  pies: {fileID: 1274542230}
   radioDeteccion: 0
   escalaGravedad: 0
   queEsSuelo:
