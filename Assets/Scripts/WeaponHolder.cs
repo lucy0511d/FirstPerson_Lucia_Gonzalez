@@ -41,11 +41,11 @@ public class WeaponHolder : MonoBehaviour
     private void CambiarArmaConRaton()
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollWheel > 0)
+        if (scrollWheel > 0) //Anterior
         {
             CambiarArma(indiceArmaActual - 1);
         }
-        else if (scrollWheel < 0)
+        else if (scrollWheel < 0) //Siguiente
         {
             CambiarArma(indiceArmaActual + 1);
         }
