@@ -7,14 +7,16 @@ public class FirstPerson : MonoBehaviour
     [SerializeField] private float vidas;
     [Header("Detección del suelo")]
     [SerializeField] private Transform pies;
-    [SerializeField] private float radioDeteccion;
-    [SerializeField] private float escalaGravedad;
+    [SerializeField] private float radioDeteccion; 
     [SerializeField] private LayerMask queEsSuelo;
-
+    [Header("Movimiento")]
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float alturaSalto;
+    [SerializeField] private float escalaGravedad;
+
     CharacterController controller;
     private Vector3 movimientoVertical;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class FirstPerson : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         controller = GetComponent<CharacterController>();
+        
     }
 
     // Update is called once per frame
@@ -78,7 +81,7 @@ public class FirstPerson : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = new Color(165, 35, 147);
         Gizmos.DrawWireSphere(pies.position, radioDeteccion);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)

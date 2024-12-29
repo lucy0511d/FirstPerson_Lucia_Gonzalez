@@ -33,7 +33,9 @@ public class SistemaInteracciones : MonoBehaviour
         }
         else if (interactuableActual)
         {
+            //Le apago...
             interactuableActual.GetComponent<Outline>().enabled = false;
+            //Le anulo.
             interactuableActual = null;
         }
 
