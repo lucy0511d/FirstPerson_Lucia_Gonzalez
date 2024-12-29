@@ -33,7 +33,7 @@ public class Granada : MonoBehaviour
         {
             foreach (Collider coll in collsDetectados)
             {
-                coll.GetComponent<EnemyPart>().Explotar();
+                coll.GetComponent<EnemyPart>().Explotar(); //Deshabilito el movimiento el enemigo impactado
                 coll.GetComponent<Rigidbody>().isKinematic = false;
                 coll.GetComponent<Rigidbody>().AddExplosionForce(80, transform.position, radioExplosion, 15.5f, ForceMode.Impulse);
 
