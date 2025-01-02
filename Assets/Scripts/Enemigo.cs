@@ -6,18 +6,18 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
+    [Header("Ataque")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float danhoAtaque;
+    [SerializeField] private LayerMask queEsDanhable;
+    [SerializeField] private int radioAtaque;
+    [SerializeField] private float vidas;
+    [SerializeField] Rigidbody[] huesos;
+    private bool danhoRealizado = false;
     private NavMeshAgent agent;
     private FirstPerson player;
     private Animator anim;
     private bool ventanaAbierta = false;
-    [SerializeField] private LayerMask queEsDanhable;
-    [SerializeField] private int radioAtaque;
-    private bool danhoRealizado = false;
-    [SerializeField] private float vidas;
-    [SerializeField] Rigidbody[] huesos;
-
     public float Vidas { get => vidas; set => vidas = value; }
 
     void Start()

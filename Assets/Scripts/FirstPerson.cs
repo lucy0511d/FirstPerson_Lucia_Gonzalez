@@ -5,15 +5,18 @@ using UnityEngine;
 public class FirstPerson : MonoBehaviour
 {
     [SerializeField] private float vidas;
-    [Header("Detección del suelo")]
-    [SerializeField] private Transform pies;
-    [SerializeField] private float radioDeteccion; 
-    [SerializeField] private LayerMask queEsSuelo;
+
     [Header("Movimiento")]
-    [SerializeField] private float velocidadMovimiento;
+    [SerializeField] private float velocidad;
     [SerializeField] private float alturaSalto;
     [SerializeField] private float escalaGravedad;
 
+    [Header("Detección del suelo")]
+
+    [SerializeField] private float radioDeteccion;
+    [SerializeField] private Transform pies;
+    [SerializeField] private LayerMask queEsSuelo;
+    
     CharacterController controller;
     private Vector3 movimientoVertical;
     
@@ -45,11 +48,13 @@ public class FirstPerson : MonoBehaviour
 
             Vector3 movimiento = Quaternion.Euler(0, anguloRotacion, 0) * Vector3.forward;
 
-            controller.Move(movimiento * velocidadMovimiento * Time.deltaTime);
+            controller.Move(movimiento * velocidad * Time.deltaTime);
         }
         DeteccionSuelo();
         AplicarGravedad();
-        
+        MoverYRotar();
+
+
 
     }
     private void MoverYRotar()

@@ -21,7 +21,7 @@ public class ArmaManual : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            system.Play();
+            system.Play(); //Ejecutar sistema particulas
 
             //forward es z, right es  , up es 
            if( Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
