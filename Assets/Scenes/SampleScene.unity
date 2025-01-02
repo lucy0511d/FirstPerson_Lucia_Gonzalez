@@ -470,9 +470,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 60.000004
+  near clip plane: 0.01
+  far clip plane: 1000
+  field of view: 60
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -498,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460695621}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -152.95784, y: 6.07251, z: -148.17136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -575,10 +575,10 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1237236180}
   m_Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 60
     OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
+    NearClipPlane: 0.01
+    FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -2167,14 +2167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: 100
-  pies: {fileID: 1274542230}
+  velocidad: 0
+  alturaSalto: 2
+  escalaGravedad: -9.81
   radioDeteccion: 0.45
+  pies: {fileID: 1274542230}
   queEsSuelo:
     serializedVersion: 2
     m_Bits: 8
-  velocidadMovimiento: 5
-  alturaSalto: 2
-  escalaGravedad: -9.81
 --- !u!114 &919132147643338286
 MonoBehaviour:
   m_ObjectHideFlags: 0
