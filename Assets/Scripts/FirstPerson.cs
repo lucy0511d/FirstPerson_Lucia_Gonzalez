@@ -86,8 +86,8 @@ public class FirstPerson : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(165, 35, 147);
-        Gizmos.DrawWireSphere(pies.position, radioDeteccion);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(pies.position, radioDeteccion);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -106,4 +106,5 @@ public class FirstPerson : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
 }
