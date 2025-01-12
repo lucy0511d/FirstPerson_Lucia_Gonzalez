@@ -1205,8 +1205,7 @@ MonoBehaviour:
   - {fileID: 878842013}
   - {fileID: 2090063005}
   - {fileID: 1525065370}
-  enemigoPrefab: {fileID: 7567618042340508658, guid: c4f3a8a24f5250b4fa86391399c5907b,
-    type: 3}
+  enemigoPrefab: {fileID: 4187228150256371247}
 --- !u!4 &1429309549
 Transform:
   m_ObjectHideFlags: 0
