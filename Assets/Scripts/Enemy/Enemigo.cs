@@ -87,7 +87,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-
+    #region Eventos de animacion
     private void FinAtaque()
     {
         agent.isStopped = true;
@@ -102,5 +102,5 @@ public class Enemigo : MonoBehaviour
     {
         ventanaAbierta = false;
     }
-    
+    #endregion
 }
