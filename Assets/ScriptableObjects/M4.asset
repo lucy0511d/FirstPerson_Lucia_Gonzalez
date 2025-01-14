@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: M4
   m_EditorClassIdentifier: 
   balasCargador: 60
-  balasBolsa: 200
-  distanciaAtaque: 500
+  balasBolsa: 180
+  distanciaAtaque: 250
   danhoAtaque: 15
   cadenciaAtaque: 0.08
