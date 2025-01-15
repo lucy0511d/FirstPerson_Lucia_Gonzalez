@@ -15,7 +15,7 @@ public class Bazooka : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Disparar();
     }
     private void Disparar()
     {

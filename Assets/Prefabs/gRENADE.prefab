@@ -131,13 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f7be93cddcad24f8c2c812996e77a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaImpulso: 20
-  tiempoVida: 0
-  radioExplosion: 0
+  fuerzaImpulso: 2
+  tiempoVida: 5
+  radioExplosion: 3
   queEsDanhable:
     serializedVersion: 2
-    m_Bits: 0
-  explosionPrefab: {fileID: 0}
+    m_Bits: 128
+  explosionPrefab: {fileID: 6576181684456544867, guid: 38fa4a2adcf86f745a02d7eba55bc1c9,
+    type: 3}
 --- !u!54 &8222516567021631757
 Rigidbody:
   m_ObjectHideFlags: 0
