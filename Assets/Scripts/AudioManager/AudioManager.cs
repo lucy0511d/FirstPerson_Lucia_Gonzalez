@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] AudioSource audioManager;
+
+    private void Start()
     {
-        
+
+    }
+    public void ReproducirSonidoMuerte(AudioClip sonidoMuerte)
+    {
+        //Ejecuta el clip introducido por parámetro de entrada
+        audioManager.PlayOneShot(sonidoMuerte);
+
+    }
+    public void ReproducirSonidoSalto(AudioClip sonidoSalto)
+    {
+        //Ejecuta el clip introducido por parámetro de entrada
+        audioManager.PlayOneShot(sonidoSalto);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

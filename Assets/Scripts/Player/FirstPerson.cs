@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPerson : MonoBehaviour
 {
     [SerializeField] private float vidas;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip salto;
+    [SerializeField] AudioClip muerte;
+    [SerializeField] AudioManager managers;
 
     [Header("Movimiento")]
     [SerializeField] private float velocidad;
@@ -12,7 +18,6 @@ public class FirstPerson : MonoBehaviour
     [SerializeField] private float escalaGravedad;
 
     [Header("Detección del suelo")]
-
     [SerializeField] private float radioDeteccion;
     [SerializeField] private Transform pies;
     [SerializeField] private LayerMask queEsSuelo;
@@ -21,7 +26,6 @@ public class FirstPerson : MonoBehaviour
     private Vector3 movimientoVertical;
     
 
-    // Start is called before the first frame update
     void Start()
     {
         // bloquea el raton y lo oculta
@@ -82,6 +86,7 @@ public class FirstPerson : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             movimientoVertical.y = Mathf.Sqrt(-2 * escalaGravedad * alturaSalto);
+            managers.ReproducirSonidoSalto(salto);
         }
     }
     private void OnDrawGizmos()
@@ -104,6 +109,8 @@ public class FirstPerson : MonoBehaviour
         if(vidas <= 0)
         {
             Destroy(gameObject);
+            managers.ReproducirSonidoMuerte(muerte);
+            SceneManager.LoadScene(2);
         }
     }
    
