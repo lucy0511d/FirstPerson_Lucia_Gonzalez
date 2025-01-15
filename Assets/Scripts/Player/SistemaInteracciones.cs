@@ -23,6 +23,7 @@ public class SistemaInteracciones : MonoBehaviour
             {
                 Debug.Log("La caja");
                 interactuableActual = hit.transform;
+                //Activar el outline de la caja
                 interactuableActual.GetComponent<Outline>().enabled = true;
             }
             if (Input.GetKeyDown(KeyCode.E))
@@ -31,7 +32,7 @@ public class SistemaInteracciones : MonoBehaviour
             }
 
         }
-        else if (interactuableActual)
+        else if (interactuableActual)//si tenía un interactuable
         {
             //Le apago...
             interactuableActual.GetComponent<Outline>().enabled = false;
