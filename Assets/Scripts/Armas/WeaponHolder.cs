@@ -21,25 +21,26 @@ public class WeaponHolder : MonoBehaviour
 
     private void CambiarArmaConTeclado()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             CambiarArma(0);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             CambiarArma(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
             CambiarArma(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
         {
             CambiarArma(3);
         }
     }
     private void CambiarArmaConRaton()
     {
+        //Lectura de la rueda del ratón (subir y bajar)
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
         if (scrollWheel > 0) //Anterior
         {
@@ -56,7 +57,9 @@ public class WeaponHolder : MonoBehaviour
         
         if (nuevoIndice >= 0 && nuevoIndice < weapons.Length)
         {
+            //Desactivo el arma que actualmente llevo equipada
             weapons[indiceArmaActual].SetActive(false);
+
             indiceArmaActual = nuevoIndice;
             weapons[indiceArmaActual].SetActive(true);
         }
