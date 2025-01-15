@@ -44,10 +44,12 @@ public class Enemigo : MonoBehaviour
 
     private void Perseguir()
     {
+        //Tengo que definir como destino la posicion del Player.
         agent.SetDestination(player.transform.position);
         //Si no hay calculos pendientes para saber donde está mi objetivo (agent.pathpending)
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
+            //Me paro ante él
             agent.isStopped = true;
             anim.SetBool("attacking", true);
             EnfocarPlayer();
@@ -71,6 +73,7 @@ public class Enemigo : MonoBehaviour
                 collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
             }
             danhoRealizado = true;
+            
         }
     }
     public void Morir()
@@ -90,6 +93,7 @@ public class Enemigo : MonoBehaviour
     #region Eventos de animacion
     private void FinAtaque()
     {
+        //Cuando termino de atacar, vuelvo a moverme
         agent.isStopped = true;
         danhoRealizado = false;
         anim.SetBool("attacking", false);

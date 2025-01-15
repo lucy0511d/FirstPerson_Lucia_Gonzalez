@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FirstPerson : MonoBehaviour
 {
-    [SerializeField] private float vidas;
+    [Header("Vida")]
+    [SerializeField] private float vida;
+    [SerializeField] private TMP_Text textoVida;
+
+    [Header("Puntuacion")]
+    [SerializeField] TMP_Text textoPuntuacion;
+    private int puntuacion;
 
     [Header("Audio")]
     [SerializeField] AudioClip salto;
@@ -32,7 +39,9 @@ public class FirstPerson : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         controller = GetComponent<CharacterController>();
-        
+        textoPuntuacion.SetText("Puntuacion: " + puntuacion);
+        textoVida.SetText("Vida: " + vida);
+
     }
 
     // Update is called once per frame
@@ -105,8 +114,8 @@ public class FirstPerson : MonoBehaviour
     }
     public void RecibirDanho(float danhoRecibido)
     {
-        vidas -= danhoRecibido;
-        if(vidas <= 0)
+        vida -= danhoRecibido;
+        if(vida <= 0)
         {
             Destroy(gameObject);
             managers.ReproducirSonidoMuerte(muerte);
