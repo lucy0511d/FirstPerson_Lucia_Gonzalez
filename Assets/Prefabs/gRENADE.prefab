@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1880916613970944262}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.29949957, y: -0.21294576, z: -0.37978235}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9342433, y: 1.9342433, z: 1.9342433}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8222516567021631757}
   - component: {fileID: 4393567145653999201}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: gRENADE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3972, y: 1.3242, z: 4.0653}
-  m_LocalScale: {x: 6.351708, y: 6.351708, z: 6.351708}
+  m_LocalScale: {x: 2.0848846, y: 2.0848846, z: 2.0848846}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8138672661920686080}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaImpulso: 2
-  tiempoVida: 5
+  tiempoVida: 1
   radioExplosion: 3
   queEsDanhable:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   explosionPrefab: {fileID: 6576181684456544867, guid: 38fa4a2adcf86f745a02d7eba55bc1c9,
     type: 3}
 --- !u!54 &8222516567021631757
@@ -165,7 +165,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!135 &4393567145653999201
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 6340467564855633510}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.29949957, y: -0.21294576, z: -0.37978235}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9342433, y: 1.9342433, z: 1.9342433}
   m_ConstrainProportionsScale: 0
   m_Children: []

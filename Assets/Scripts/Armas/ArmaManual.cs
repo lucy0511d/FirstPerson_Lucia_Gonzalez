@@ -29,9 +29,10 @@ public class ArmaManual : MonoBehaviour
                 if ( hitInfo.transform.CompareTag("ParteEnemigo"))
                 {
                     hitInfo.transform.GetComponent<EnemyPart>().RecibirDanho(misDatos.danhoAtaque);
+                    
                 }
                 
-               // Debug.Log(hitInfo.transform.name);
+                
                 
            }
         }

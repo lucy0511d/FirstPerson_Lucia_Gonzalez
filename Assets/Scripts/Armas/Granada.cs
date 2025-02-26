@@ -15,7 +15,7 @@ public class Granada : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward.normalized * 2f, ForceMode.Impulse);
+        rb.AddForce(transform.forward.normalized * fuerzaImpulso, ForceMode.Impulse);
         Destroy(gameObject, tiempoVida);
     }
 
