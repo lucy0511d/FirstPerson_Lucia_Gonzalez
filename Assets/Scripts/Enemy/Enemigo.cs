@@ -54,6 +54,11 @@ public class Enemigo : MonoBehaviour
             anim.SetBool("attacking", true);
             EnfocarPlayer();
         }
+        else
+        {
+            agent.isStopped = false;
+            anim.SetBool("attacking", false);
+        }
     }
 
     private void EnfocarPlayer()
