@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -12,8 +13,10 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float danhoAtaque;
     [SerializeField] private LayerMask queEsDanhable;
     [SerializeField] private int radioAtaque;
+    [SerializeField] private int puntuacion;
     [SerializeField] private float vidas;
     [SerializeField] Rigidbody[] huesos;
+    [SerializeField] TMP_Text textopuntuacion;
     private bool danhoRealizado = false;
     private NavMeshAgent agent;
     private FirstPerson player;
@@ -89,7 +92,7 @@ public class Enemigo : MonoBehaviour
         anim.enabled = false;
         CambiarEstadoHuesos(false);
         victoria++;
-        if (victoria > 5)
+        if (victoria > 3)
         {
             SceneManager.LoadScene(2);
         }

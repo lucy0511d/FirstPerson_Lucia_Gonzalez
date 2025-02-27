@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &99113420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 323.6441}
+  m_margin: {x: 0, y: -151.411, z: 0, w: 323.6441}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -255,7 +255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 128, y: -399}
+  m_AnchoredPosition: {x: 300, y: -399}
   m_SizeDelta: {x: -561.3632, y: -237.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &345930414
@@ -11484,8 +11484,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 820584516}
-  - {fileID: 1463718004}
   - {fileID: 99113422}
+  - {fileID: 1463718004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11686,7 +11686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1463718004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13188,9 +13188,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1633782752748051412, guid: d61443a64ddbf5a41b86d6321e5736fe,
         type: 3}
+      propertyPath: vidas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633782752748051412, guid: d61443a64ddbf5a41b86d6321e5736fe,
+        type: 3}
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 1334685052}
+    - target: {fileID: 1633782752748051412, guid: d61443a64ddbf5a41b86d6321e5736fe,
+        type: 3}
+      propertyPath: textopuntuacion
+      value: 
+      objectReference: {fileID: 99113420}
     - target: {fileID: 3108962775920460056, guid: d61443a64ddbf5a41b86d6321e5736fe,
         type: 3}
       propertyPath: m_Name
