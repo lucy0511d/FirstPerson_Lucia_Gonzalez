@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemigo : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Enemigo : MonoBehaviour
     private FirstPerson player;
     private Animator anim;
     private bool ventanaAbierta = false;
+    private static int victoria;
     public float Vidas { get => vidas; set => vidas = value; }
 
     void Start()
@@ -86,6 +88,11 @@ public class Enemigo : MonoBehaviour
         agent.enabled = false;
         anim.enabled = false;
         CambiarEstadoHuesos(false);
+        victoria++;
+        if (victoria > 5)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     private void CambiarEstadoHuesos(bool estado)
     {
